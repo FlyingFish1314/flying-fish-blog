@@ -8,7 +8,8 @@
     "build:ssg": "valaxy build --ssg",
     "dev": "valaxy",
     "rss": "valaxy rss",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "commit":"cz"
   },
   "dependencies": {
     "valaxy": "0.14.16",
