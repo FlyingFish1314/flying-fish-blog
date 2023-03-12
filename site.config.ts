@@ -1,12 +1,13 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: "https://valaxy.site/",
+  url: "https://flying-fish-blog.netlify.app/",
   lang: "zh-CN",
   title: "飞鱼的个人博客",
   author: {
-    name: "云游君",
-    avatar: "https://www.yunyoujun.cn/images/avatar.jpg"
+    name: "飞鱼",
+    avatar:
+      "https://raw.githubusercontent.com/FlyingFish1314/chartbed/main/%E5%A4%B4%E5%83%8F.jpg",
   },
   description: "个人博客，记录学习笔记和总结",
   social: [
