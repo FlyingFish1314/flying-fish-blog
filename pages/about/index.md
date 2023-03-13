@@ -2,6 +2,14 @@
 title: 关于我
 ---
 
+一名学习前端开发的小菜鸟，用这个博客来存放日常学习总结
+
+博客搭建借助[Valaxy](https://github.com/YunYouJun/valaxy)
+
+---
+YunYouJun的话：
+
+---
 I am developing [Valaxy](https://github.com/YunYouJun/valaxy) - Next Generation Static Blog Framework.
 
 If you like it, you can sponsor me in [GitHub](https://github.com/sponsors/YunYouJun) or [sponsors.yunyoujun.cn](https://sponsors.yunyoujun.cn).
