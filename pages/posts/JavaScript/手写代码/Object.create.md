@@ -7,7 +7,7 @@ categories:
   - 手写代码
 tags:
   - JavaScript
-  - 手写
+  - Object.create
 ---
 
 
@@ -19,7 +19,7 @@ tags:
 + 思路：将传入的对象作为原型
 
 **实现：**
-```
+```JavaScript
 function create (obj){
   function F(){}
   F.prototype = obj
@@ -28,7 +28,7 @@ function create (obj){
 
 ```
 **测试：**
-```
+```JavaScript
 // 测试
 const person = {
   sayName:function(){
