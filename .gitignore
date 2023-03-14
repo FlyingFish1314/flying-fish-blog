@@ -17,4 +17,5 @@ node_modules
 
 components.d.ts
 
-.test.js
+test.js
+test.html
