@@ -1,76 +1,23 @@
 
-
-//代码
-// function create (obj){
-//   function F(){}
-//   F.prototype = obj
-//   return new F()
-// }
-// 测试
-// const person = {
-//   sayName:function(){
-//     console.log(`My name is ${this.name}.`)
-//   }
-// }
-// let me = Object.create(person)
-// let me = create(person)
-// me.name = 'tom'
-// me.sayName()
-
-
-function myInstanceof(left,right){
-  //获取对象的原型
-  let proto = Object.getPrototypeOf(left);
-  // 获取构造函数的prototype对象
-  let prototype =right.prototype;
-  while(true){
-    if(!proto) return false
-    if(proto === prototype) return true
-
-    proto = Object.getPrototypeOf(proto)
+var lengthOfLongestSubstring = function (s) {
+  // 哈希集合，记录每个字符是否出现过
+  const occ =new Set()
+  const n = s.length;
+  // 右指针，初始值为-1,相当于字符串左边界的左侧还没开始移动
+  let rk = -1,ans = 0;
+  for(let i=0;i<n;++i){
+    if(i!== 0 ){
+      // 左指针向右移动一格删除一个字符
+      occ.delete(s.charAt(i-1))
+    }
+    while (rk + 1 < n && !occ.has(s.charAt(rk + 1))){
+      // 不断移动右指针
+      occ.add(s.charAt(rk+1))
+      ++rk;
+    }
+    // 低i到rk个字符是一个机场的无重复字符字串
+    ans = Math.max(ans,rk-i+1)
   }
+  return ans
 }
-
-function Car (make, model, year) {
-  this.make = make;
-  this.model = model;
-  this.year = year;
-}
-const auto = new Car('Honda', 'Accord', 1998);
-
-// console.log(myInstanceof(auto,Car));
-// Expected output: true
-
-// console.log(myInstanceof(auto,Object));
-// Expected output: true
-
-
-function objectFactory(){
-  let newObject = null
-  // arguments参数数组调用arr的方法
-  let constructor = Array.prototype.shift.call(arguments)
-  let result = null
-  // 判断参数是否是一个函数
-  if(typeof constructor !== "function"){
-    console.error("type error");
-    return
-  }
-  // 新建一个对象，对象的原型为构造函数的prototype对象
-  newObject = Object.create(constructor.prototype)
-  // 将this指向新建对象，并执行函数
-  result = constructor.apply(newObject,arguments)
-  // 判断返回对象
-  let flag = result && (typeof result === "object" || typeof result === "function")
-  return flag?result:newObject
-}
-
-
-function Person(name,age){
-  this.name = name
-  this.age = age
-}
-Person.prototype.sayName = function(){
-  console.log(this.name, this.age);
-}
-let people = objectFactory(Person,"tom",20)
-people.sayName()  //tom 20
+console.log(lengthOfLongestSubstring("abcabcbb"));

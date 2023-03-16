@@ -19,3 +19,4 @@ tags:
 ## 2.github提交信息的图标是怎们设置的
 + [使用指南](https://blog.csdn.net/qq_41005535/article/details/80999062)
 + [图标查看手册](https://gitmoji.dev/)
+
