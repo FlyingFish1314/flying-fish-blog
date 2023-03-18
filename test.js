@@ -62,4 +62,62 @@ var removeElement = function (nums, val) {
   console.log(nums);
   return k
 };
-removeElement([3, 2, 2, 3],3)
+// removeElement([3, 2, 2, 3],3)
+
+function getMinPalindrome (str) {
+  let arr = str.split("");
+  let len = arr.length;
+  let i = 0, j = len - 1;
+  // 从左右两端开始比较字符，如果不同则将其替换为字典序更小的字符（即字符"a"-'z'）
+  while (i < j) {
+    if (arr[i] !== arr[j]) {
+      let temp1 = arr.slice(0, i).concat(["a"], arr.slice(i + 1)); // 将左侧不同的字符替换为"a"
+      let temp2 = arr.slice(0, j).concat(["a"], arr.slice(j + 1)); // 将右侧不同的字符替换为"a"
+      let temp3 = arr.slice(0, i).concat(["a"], arr.slice(i + 1, j), ["a"], arr.slice(j + 1)); // 将左右两侧不同的字符都替换为"a"
+      // 计算三种情况下的字典序，选择最小的一个
+      let minStr = temp1.join("");
+      if (temp2.join("") < minStr) {
+        minStr = temp2.join("");
+      }
+      if (temp3.join("") < minStr) {
+        minStr = temp3.join("");
+      }
+      return minStr;
+    }
+    i++;
+    j--;
+  }
+  return str; // 如果原始字符串本身就是回文字符串，直接返回即可
+}
+console.log(getMinPalindrome("abcde"));
+
+
+function getMaxEnemies (N, A, B, enemies) {
+  enemies.sort((a, b) => a[0] - b[0]); // 按照横坐标从小到大排序
+  let maxEnemies = 0;
+  for (let i = 0; i < N; i++) {
+    let j = i + 1;
+    while (j < N && enemies[j][0] - enemies[i][0] <= A) {
+      j++;
+    }
+    j--; // j指向滑动窗口的最右侧敌人
+    let windowEnemies = enemies.slice(i, j + 1); // 滑动窗口内的敌人
+    windowEnemies.sort((a, b) => a[1] - b[1]); // 按照纵坐标从小到大排序
+    let k = 0, m = 1, count = 1;
+    while (m < windowEnemies.length) {
+      if (windowEnemies[m][1] - windowEnemies[k][1] <= B) {
+        count++; // 统计滑动窗口内满足条件的敌人数量
+        m++;
+      } else {
+        k++;
+        if (k === m) {
+          m++;
+        }
+      }
+    }
+    if (count > maxEnemies) {
+      maxEnemies = count;
+    }
+  }
+  return maxEnemies;
+}
