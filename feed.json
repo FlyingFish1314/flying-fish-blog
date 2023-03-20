@@ -1,0 +1,302 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "飞鱼的个人博客",
+    "home_page_url": "https://flying-fish-blog.netlify.app/",
+    "feed_url": "https://flying-fish-blog.netlify.app/feed.json",
+    "description": "个人博客，记录学习笔记和总结",
+    "icon": "https://raw.githubusercontent.com/FlyingFish1314/chartbed/main/%E5%A4%B4%E5%83%8F.jpg",
+    "author": {
+        "name": "飞鱼",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "",
+            "content_html": "<p>[[toc]]</p>\n<h2>1.基本使用</h2>\n<pre><code class=\"language-javaScript\">  var str = &quot;abc123def&quot;;\n  var patt1 = /[0-9]+/;\n  document.write(</code></pre>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/工具/正则表达式",
+            "title": "正则表达式",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>静态站点生成器</h2>\n<h2>静态站点托管平台</h2>\n<p>目前已有很多第三方静态站点托管平台。</p>\n<p><a href=\"https://pages.github.com/\">GitHub Pages</a> 是其中的代表。<br>\n此外还有</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/测试/excerpt-type-md",
+            "title": "静态站点生成器与托管平台",
+            "date_modified": "2022-07-07T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "",
+            "url": "https://flying-fish-blog.netlify.app/posts/测试/分类测试",
+            "title": "Categories A > B > C",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>::: zh-CN<br>\n还什么都没写呢……<br>\n:::</p>\n<p>::: en<br>\nNothing has been written……<br>\n:::</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/测试/测试",
+            "title": "Valaxy 开发笔记",
+            "date_modified": "2022-03-23T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>[[toc]]</p>\n<h2>1.代码实现</h2>\n<ul>\n<li>思路：将传入的对象作为原型</li>\n</ul>\n<p><strong>实现：</strong></p>\n<pre><code class=\"language-JavaScript\">function create (obj){\n  function F(){</code></pre>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/手写代码/Object.create",
+            "title": "Object.create实现",
+            "date_modified": "2023-03-13T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h3>0.思考</h3>\n<ul>\n<li>三者有何区别？</li>\n<li>不传如第一个参数，如何让上下文默认为window</li>\n<li>改变了this指向，让新对象可以执行该函数，并能接受参数</li>\n</ul>\n<h2>1.<code>call</code>函数</h2>\n<h3>1.1</h3>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/手写代码/call、apply及bind",
+            "title": "call、apply、bind函数",
+            "date_modified": "2023-03-14T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.代码实现</h2>\n<blockquote>\n<p>描述：<code>instanceof</code> 运算符用于检测构造函数的 <code>prototype</code> 属性是否出现在某个实例对象的原型链上。</p>\n</blockquote>\n<p><strong>代码：</strong></p>\n<pre><code class=\"language-JavaScript\">fun</code></pre>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/手写代码/instanceof 方法",
+            "title": "instanceof 方法",
+            "date_modified": "2023-03-13T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>[[toc]]</p>\n<h2>1.代码实现</h2>\n<p><strong>思路：</strong></p>\n<ul>\n<li>创建一个新的空对象</li>\n<li>设置原型，将对象的原型设置为函数的<code>prototype</code>对象</li>\n<li>让函数的this指向这个对象，执行构造函数的代</li>\n</ul>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/手写代码/new 操作符",
+            "title": "new 操作符",
+            "date_modified": "2023-03-13T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.github主页贪吃蛇怎么设置</h2>\n<p><strong>先看这篇：</strong>[给GitHub首页添加一个有趣的贪吃蛇小动画](<a href=\"https://cloud.tencent.com/developer/article/\">https://cloud.tencent.com/developer/article/</a></p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/收藏夹/工具箱/github使用技巧",
+            "title": "github使用技巧",
+            "date_modified": "2023-03-14T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>[[toc]]</p>\n<h2>第二周</h2>\n<h3>周二（2023-03-14）</h3>\n<h4>js基础知识点及常考题回顾</h4>\n<p><strong>主要学习地址：</strong></p>\n<ul>\n<li>[前端面试之道（掘金小册）](<a href=\"https://juejin.c\">https://juejin.c</a></li>\n</ul>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/日常/2023/3月",
+            "title": "2023-3月日常",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.描述：</h2>\n<ul>\n<li>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。</li>\n</ul>\n<p><strong>实例1</strong></p>\n<blockquote>\n<p>输入: s = &quot;abcabcbb&quot;<br>\n输出: 3<br>\n解释: 因为无重复字符的最长子串是</p>\n</blockquote>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/算法/leetcode/03-无重复字串的最长字串",
+            "title": "出重复字串的最长字串",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.题目：<a href=\"https://leetcode.cn/problems/reverse-linked-list/\">206.反转链表</a></h2>\n<p><strong>实例1</strong><br>\n![图片](<a href=\"https://assets\">https://assets</a></p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/算法/leetcode/206-反转链表",
+            "title": "反转链表",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.题目<a href=\"https://leetcode.cn/problems/swap-nodes-in-pairs/\">24. 两两交换链表中的节点</a></h2>\n<ul>\n<li>给你一个链表，两两交换其中相邻的节点，并返</li>\n</ul>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/算法/leetcode/24-两两交换链表中的结点",
+            "title": "两两交换链表中的结点",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.题目<a href=\"https://leetcode.cn/problems/ti-huan-kong-ge-lcof/\">剑指 Offer 05. 替换空格</a></h2>\n<p><strong>实例1</strong></p>\n<blockquote>\n<p>输入：s = &quot;We</p>\n</blockquote>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/算法/leetcode/剑指aoffer05.替换空格",
+            "title": "替换空格",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "",
+            "url": "https://flying-fish-blog.netlify.app/posts/算法/leetcode/面试题02.07.链表相交",
+            "title": "出重复字串的最长字串",
+            "date_modified": "2023-03-20T05:03:10.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p>[[TOC]]</p>\n<h2>1.源码优化</h2>\n<ul>\n<li>优化目的：提高代码的易于开发和可维护性</li>\n<li>优化方向：\n<ul>\n<li>monorepo</li>\n<li>typescript</li>\n</ul>\n</li>\n</ul>\n<h3>1.1更好的代码管理方式：mono</h3>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/Vue/vue3学习/01.vue3的优化",
+            "title": "01.vue3的优化",
+            "date_modified": "2023-03-18T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.应用程序初始化</h2>\n<ul>\n<li>本质： App 组件挂载到 id 为 app 的 DOM 节点上。</li>\n<li>区别：在 Vue.js 3.0 中还导入了一个 createApp，其实这是个入口函数，它是 V</li>\n</ul>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/Vue/vue3学习/02.组件渲染：vnode到真实DOM转变过程",
+            "title": "02.组件渲染：vnode到真实DOM是如何转变的？",
+            "date_modified": "2023-03-18T00:00:00.000Z",
+            "date_published": "2023-03-20T05:03:10.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>Valaxy</h2>\n<p>Next Generation Static Blog Framework.</p>\n<p>Write your first post!</p>\n<h2>Usage</h2>\n<p>Modify `valaxy</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/测试/hello-valaxy",
+            "title": "Hello, Valaxy!",
+            "date_modified": "2022-04-01T00:00:00.000Z",
+            "date_published": "2022-04-01T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>What is Valaxy? {lang=&quot;en&quot;}</h2>\n<p>::: en<br>\nValaxy aims to be a next generation of static blogging frame</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/测试/测试2",
+            "title": "Hello, Valaxy!",
+            "date_modified": "2022-03-22T00:00:00.000Z",
+            "date_published": "2022-03-23T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.事件循环</h2>\n<h3>1.1事件循环的流程</h3>\n<p>事件循环（Event Loop）是JavaScript的核心机制之一，它用于协调执行栈和任务队列之间的关系。当执行栈为空时，事件循环会从任务队列中</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/知识点/事件循环",
+            "title": "事件循环",
+            "date_modified": "2023-03-19T00:00:00.000Z",
+            "date_published": "2022-03-19T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h3>1.数据类型有哪些？</h3>\n<p><strong>原始数据类型：</strong><br>\n...<br>\nSymbol:<br>\n<em>Symbol是干什么的？</em></p>\n<blockquote>\n<p>Symbol是JavaScript语言的一种基本类型，表示独一无二的值。它们通常被用作</p>\n</blockquote>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/知识点/数据类型",
+            "title": "数据类型",
+            "date_modified": "2023-03-19T00:00:00.000Z",
+            "date_published": "2022-03-19T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.发布订阅模式</h2>\n<p><a href=\"https://juejin.cn/post/6844903850105634824#heading-2\">JavaScript 发布-订阅模式</a></p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/知识点/设计模式",
+            "title": "数据类型",
+            "date_modified": "2023-03-19T00:00:00.000Z",
+            "date_published": "2022-03-19T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<p><strong>给一个树形结构，实现根据id返回name属性的功能</strong></p>\n<pre><code class=\"language-JavaScript\">let tree = [\n  {\n    id: 1,\n    name: &quot;北京&quot;,\n    childre</code></pre>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/面试/面试是手写题/数组扁平化",
+            "title": "数组对象扁平化",
+            "date_modified": "2023-03-19T00:00:00.000Z",
+            "date_published": "2022-03-19T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>1.闭包（closure）和对象</h2>\n<ul>\n<li>共同特性：</li>\n</ul>\n<blockquote>\n<p>都可以对一个状态值进行封装和创建行为</p>\n</blockquote>\n<h3>闭包的描述</h3>\n<p><em>为什么要使用闭包？</em><br>\n看看AI怎么回答<br>\n闭包是一种非常有用的编程技术，它可以</p>\n",
+            "url": "https://flying-fish-blog.netlify.app/posts/JavaScript/知识点/闭包",
+            "title": "闭包",
+            "date_modified": "2023-03-17T00:00:00.000Z",
+            "date_published": "2022-03-18T00:00:00.000Z",
+            "author": {
+                "name": "飞鱼",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
