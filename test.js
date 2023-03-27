@@ -1,126 +1,131 @@
-var lengthOfLongestSubstring = function (s) {
-  // 哈希集合，记录每个字符是否出现过
-  const occ = new Set();
-  const n = s.length;
-  // 右指针，初始值为-1,相当于字符串左边界的左侧还没开始移动
-  let rk = -1,
-    ans = 0;
-  for (let i = 0; i < n; ++i) {
-    if (i !== 0) {
-      // 左指针向右移动一格删除一个字符
-      occ.delete(s.charAt(i - 1));
-    }
-    while (rk + 1 < n && !occ.has(s.charAt(rk + 1))) {
-      // 不断移动右指针
-      occ.add(s.charAt(rk + 1));
-      ++rk;
-    }
-    // 低i到rk个字符是一个机场的无重复字符字串
-    ans = Math.max(ans, rk - i + 1);
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false
+  let arr = new Array(26).fill(0)
+  const base = "a".charCodeAt();
+  for (let i = 0; i < s.length; i++) {
+    arr[s[i].charCodeAt()-base]++
   }
-  return ans;
-};
-// console.log(lengthOfLongestSubstring("abcabcbb"));
-
-var getListLen = function (head) {
-  let len = 0,
-    cur = head;
-  while (cur) {
-    len++;
-    cur = cur.next;
+  for (let i = 0; i < s.length; i++) {
+    if (!arr[t[i].charCodeAt() - base]) return false
+    arr[t[i].charCodeAt()-base]--
   }
-  return len;
-};
-var getIntersectionNode = function (headA, headB) {
-  let curA = headA,
-    curB = headB,
-    lenA = getListLen(headA), // 求链表A的长度
-    lenB = getListLen(headB);
-  if (lenA < lenB) {
-    // 让curA为最长链表的头，lenA为其长度
-    // 交换变量注意加 “分号” ，两个数组交换变量在同一个作用域下时
-    // 如果不加分号，下面两条代码等同于一条代码: [curA, curB] = [lenB, lenA]
-    [curA, curB] = [curB, curA];
-    [lenA, lenB] = [lenB, lenA];
-  }
-  let i = lenA - lenB; // 求长度差
-  while (i-- > 0) {
-    // 让curA和curB在同一起点上（末尾位置对齐）
-    curA = curA.next;
-  }
-  while (curA && curA !== curB) {
-    // 遍历curA 和 curB，遇到相同则直接返回
-    curA = curA.next;
-    curB = curB.next;
-  }
-  return curA;
+  // for(let i=0;i<26;i++){
+  //   if(arr[i]!==0) return false
+  // }
+  return true
 };
 
-var removeElement = function (nums, val) {
-  let k = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[k++] = nums[i];
+// console.log(isAnagram("anagram","nagaraa"));
+// console.log(!0);
+var intersection = function (nums1, nums2) {
+  if(nums1.length>nums2.length){
+    [nums,nums2] = [nums2,nums1]
+  }
+  let set = new Set();
+  for (let i = 0; i < nums1.length; i++) {
+    set.add[nums1]
+  }
+  let arr = []
+  for (let i = 0; i < nums2.length; i++) {
+    if (set.has(nums2[i])) {
+      arr.push(nums2[i])
+      set.delete(nums2[i])
     }
   }
-  console.log(nums);
-  return k;
+  return arr
 };
-// removeElement([3, 2, 2, 3],3)
+// intersection()
 
-// async function async1(){
-//   console.log('aaa'); //2
-//   await async2()
-//   console.log('bbb'); //6
-// }
-// async function async2(){
-//   console.log('ccc'); //3
-// }
-// setTimeout(()=>{
-//   console.log('ddd'); //8
-// },0)
-// console.log('fff'); //1
-// async1()
-// new Promise((resolve,reject)=>{
-//   console.log('ggg'); //4
-//   resolve()
-// }).then((res)=>{
-//   console.log('hhh');//7
-// })
-// console.log('iii'); //5
-
-let tree = [
-  {
-    id: 1,
-    name: "北京",
-    children: [
-      {
-        id: 2,
-        name: "河南",
-        children: [{ id: 3, name: "新乡", children: [] }],
-      },
-    ],
-  },
-  {
-    id:4,
-    name:"郑州",
-    children:[]
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersection = function (nums1, nums2) {
+  let set = new Set();
+  for (let i = 0; i < nums1.length; i++) {
+    set.add(nums1[i])
   }
-];
+  let arr = []
+  for (let i = 0; i < nums2.length; i++) {
+    if (set.has(nums2[i])) {
+      arr.push(nums2[i])
+      set.delete(nums2[i])
+      if (!set.size) return arr
+    }
+  }
+  return arr
+};
 
-function getNameById(tree,id){
-  let newTree  = faltTree(tree)
-  return newTree[id].name
+var intersection = function (nums1, nums2) {
+  // 根据数组大小交换操作的数组
+  if (nums1.length < nums2.length) {
+    const _ = nums1;
+    nums1 = nums2;
+    nums2 = _;
+  }
+  const nums1Set = new Set(nums1);
+  const resSet = new Set();
+  // for(const n of nums2) {
+  //     nums1Set.has(n) && resSet.add(n);
+  // }
+  // 循环 比 迭代器快
+  for (let i = nums2.length - 1; i >= 0; i--) {
+    nums1Set.has(nums2[i]) && resSet.add(nums2[i]);
+  }
+  return Array.from(resSet);
+};
+
+console.log(jsonStringify({a:1,b:2,c:{d:{e:5}}}));
+
+function jsonStringify (obj) {
+  let type = typeof obj;
+  if (type !== "object") {
+    if (/string|undefined|function/.test(type)) {
+      obj = '"' + obj + '"';
+    }
+    return String(obj);
+  } else {
+    let json = [],
+      arr = Array.isArray(obj),
+      isNull = obj === null;
+    for (let k in obj) {
+      let v = obj[k],
+        type = typeof v;
+      if (/string|undefined|function/.test(type)) {
+        v = '"' + v + '"';
+      } else if (type === "object") {
+        v = jsonStringify(v);
+      }
+      json.push((arr ? "" : '"' + k + '":') + String(v));
+    }
+    return (isNull ? "null" : (arr ? "[" : "{")) + String(json) + (arr ? "]" : "}");
+  }
 }
-function faltTree(tree,re ={}){
-  if(!Array.isArray(tree) || tree.length === 0) return re
-  tree.forEach((item)=>{
-    const children = item.children;
-    delete item.children
-    re[item.id] = item
-    faltTree(children,re)
-  })
-  return re
-}
-// console.log(getNameById(tree, 1));
 
+
+var fourSum = function (nums, target) {
+  const len = nums.length;
+  if (len < 4) return [];
+  nums.sort((a, b) => a - b);
+  const res = [];
+  for (let i = 0; i < len - 3; i++) {
+    // 去重i
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+    for (let j = i + 1; j < len - 2; j++) {
+      // 去重j
+      if (j > i + 1 && nums[j] === nums[j - 1]) continue;
+      let l = j + 1, r = len - 1;
+      while (l < r) {
+        const sum = nums[i] + nums[j] + nums[l] + nums[r];
+        if (sum < target) { l++; continue }
+        if (sum > target) { r--; continue }
+        res.push([nums[i], nums[j], nums[l], nums[r]]);
+
+        // 对nums[left]和nums[right]去重
+        while (l < r && nums[l] === nums[++l]);
+        while (l < r && nums[r] === nums[--r]);
+      }
+    }
+  }
+}
