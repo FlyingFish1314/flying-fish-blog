@@ -9,7 +9,8 @@
     "dev": "valaxy",
     "rss": "valaxy rss",
     "serve": "vite preview",
-    "commit":"git add . && cz"
+    "commit":"git add . && cz",
+    "push":"git push -u origin main"
   },
   "dependencies": {
     "valaxy": "0.14.16",
